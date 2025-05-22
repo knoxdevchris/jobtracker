@@ -25,4 +25,4 @@ Or use the green Run button in your IDE.
 - Java
 - Spring Boot
 - Spring Data JPA
-- H2 Database
+- MySQL
