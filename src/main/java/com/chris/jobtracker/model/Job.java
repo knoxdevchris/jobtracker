@@ -1,4 +1,4 @@
-package model;
+package com.chris.jobtracker.model;
 
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;

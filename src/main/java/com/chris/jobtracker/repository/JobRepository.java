@@ -1,8 +1,9 @@
-package repository;
+package com.chris.jobtracker.repository;
 
-import model.Job;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.chris.jobtracker.model.Job;
 
 
 @Repository
