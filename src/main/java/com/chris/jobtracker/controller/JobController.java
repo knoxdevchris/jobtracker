@@ -21,4 +21,9 @@ public class JobController {
     public List<Job> getAllJobs() {
         return jobRepository.findAll();
     }
+
+    @PostMapping
+    public Job createJob(@RequestBody Job job){
+        return jobRepository.save(job);
+    }
 }
