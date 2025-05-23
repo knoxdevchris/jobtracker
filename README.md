@@ -29,12 +29,18 @@ Make sure you have the following installed:
    git clone https://github.com/your-username/jobtracker.git
    cd jobtracker
 2. Configure the MySQL database
+3. 
    Open src/main/resources/application.properties and add your DB info:
+   
    spring.datasource.url=jdbc:mysql://localhost:3306/jobtracker
+   
    spring.datasource.username=yourUsername
+   
    spring.datasource.password=yourPassword
+   
    spring.jpa.hibernate.ddl-auto=update
-3. Run the app
+   
+5. Run the app
    Use Maven to build and run the app:
    mvn clean install
    mvn spring-boot:run
