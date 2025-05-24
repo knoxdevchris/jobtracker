@@ -1,6 +1,6 @@
 spring.datasource.url=jdbc:mysql://localhost:3306/jobtracker
 spring.datasource.username=root
-spring.datasource.password=FirstDB11
+spring.datasource.password="test" # Replace with your actual password"
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true

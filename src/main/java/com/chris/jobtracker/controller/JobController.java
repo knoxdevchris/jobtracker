@@ -1,6 +1,7 @@
 package com.chris.jobtracker.controller;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
@@ -38,5 +39,29 @@ public class JobController {
             errors.put(error.getField(), error.getDefaultMessage()));
         return errors;
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Job> updateJob(@PathVariable Long id, @Valid @RequestBody Job updatedJob) {
+        return jobRepository.findById(id)
+            .map(job -> {
+                job.setPosition(updatedJob.getPosition());
+                job.setCompany(updatedJob.getCompany());
+                job.setStatus(updatedJob.getStatus());
+                job.setNotes(updatedJob.getNotes());
+                return ResponseEntity.ok(jobRepository.save(job));
+            })
+            .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteJob(@PathVariable Long id) {
+        return jobRepository.findById(id)
+            .map(job -> {
+                jobRepository.delete(job);
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT); // explicit and clean
+            })
+            .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
 
 }
