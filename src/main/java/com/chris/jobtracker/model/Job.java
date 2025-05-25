@@ -22,7 +22,10 @@ public class Job {
     @NotBlank(message = "Company is required")
     private String company;
 
+    @NotBlank(message = "Status is required")
     private String status;
+
+    @NotBlank(message = "Notes is required")
     private String notes;
 
 }
