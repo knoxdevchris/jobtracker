@@ -53,6 +53,114 @@ API Endpoints
 | PUT    | `/jobs/{id}` | Update an existing job |
 | DELETE | `/jobs/{id}` | Delete a job           |
 
+## API Documentation
+
+### Get All Jobs
+```http
+GET /jobs
+```
+Returns a list of all job entries.
+
+**Response**
+```json
+[
+  {
+    "id": 1,
+    "position": "Software Engineer",
+    "company": "Tech Corp",
+    "status": "Applied",
+    "notes": "Applied through LinkedIn"
+  },
+  {
+    "id": 2,
+    "position": "Full Stack Developer",
+    "company": "Startup Inc",
+    "status": "Interview",
+    "notes": "Technical interview scheduled"
+  }
+]
+```
+
+### Create a New Job
+```http
+POST /jobs
+Content-Type: application/json
+```
+Creates a new job entry.
+
+**Request Body**
+```json
+{
+  "position": "Software Engineer",
+  "company": "Tech Corp",
+  "status": "Applied",
+  "notes": "Applied through LinkedIn"
+}
+```
+
+**Response**
+```json
+{
+  "id": 1,
+  "position": "Software Engineer",
+  "company": "Tech Corp",
+  "status": "Applied",
+  "notes": "Applied through LinkedIn"
+}
+```
+
+### Update a Job
+```http
+PUT /jobs/{id}
+Content-Type: application/json
+```
+Updates an existing job entry.
+
+**Request Body**
+```json
+{
+  "position": "Senior Software Engineer",
+  "company": "Tech Corp",
+  "status": "Interview",
+  "notes": "Technical interview scheduled"
+}
+```
+
+**Response**
+```json
+{
+  "id": 1,
+  "position": "Senior Software Engineer",
+  "company": "Tech Corp",
+  "status": "Interview",
+  "notes": "Technical interview scheduled"
+}
+```
+
+### Delete a Job
+```http
+DELETE /jobs/{id}
+```
+Deletes a job entry.
+
+**Response**
+- 204 No Content (success)
+- 404 Not Found (if job doesn't exist)
+
+### Validation Rules
+- All fields (position, company, status, notes) are required
+- Fields cannot be blank
+
+### Error Responses
+```json
+{
+  "position": "Position is required",
+  "company": "Company is required",
+  "status": "Status is required",
+  "notes": "Notes is required"
+}
+```
+
 Tech Stack
 Backend
 Java 17
