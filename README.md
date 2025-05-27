@@ -4,7 +4,7 @@ A full-stack job tracking app to help you manage your job applications efficient
 
 ## Features
 
-- ✅ Create, view, update, and delete job entries  
+- ✅ Create, view, update, and delete job entries   
 - ⚙️ RESTful API built with Spring Boot  
 - 💾 MySQL for persistent data storage  
 - ✔️ Data validation using Jakarta Validation  
