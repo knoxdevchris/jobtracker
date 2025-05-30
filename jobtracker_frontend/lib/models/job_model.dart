@@ -8,7 +8,7 @@ String jobToJson(List<Job> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Job {
-  final int id; // Assuming 'id' is an int, adjust if it's a String (e.g., UUID)
+  final int id; 
   final String title;
   final String company;
   final String description;
