@@ -10,7 +10,7 @@ A full-stack job tracking app to help you manage your job applications efficient
 
 ## Tech Stack
 
-### Backend
+### Backend 
 - Java 17
 - Spring Boot
 - Spring Data JPA
