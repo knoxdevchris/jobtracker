@@ -16,7 +16,7 @@ public class Job {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Position is required")
+    @NotBlank(message = "Position is required") 
     private String position;
 
     @NotBlank(message = "Company is required")
