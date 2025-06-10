@@ -50,7 +50,11 @@ A full-stack job tracking app to help you manage your job applications efficient
 ```
 GET /jobs
 ```
-Returns a list of all job entries.
+Returns a list of all job entries. You can optionally filter by status:
+
+```
+GET /jobs?status=Interview
+```
 
 #### Response Example
 ```json
@@ -141,7 +145,6 @@ DELETE /jobs/{id}
 ## Future Improvements
 
 - Frontend integration (Flutter)
-- Job filtering by status
 - Pagination and search
 - User authentication
 
