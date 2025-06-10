@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/jobs")
+@CrossOrigin(origins = "*")
 public class JobController {
 
     private final JobRepository jobRepository;
@@ -22,7 +23,10 @@ public class JobController {
     }
 
     @GetMapping
-    public List<Job> getAllJobs() {
+    public List<Job> getAllJobs(@RequestParam(required = false) String status) {
+        if (status != null && !status.isBlank()) {
+            return jobRepository.findByStatus(status);
+        }
         return jobRepository.findAll();
     }
 
